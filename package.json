@@ -1,7 +1,8 @@
 {
-  "name": "nextchat",
+  "name": "arab-ai",
   "private": false,
   "license": "mit",
+  "description": "Arab AI - Light and Fast AI Assistant with Arabic cultural design",
   "scripts": {
     "mask": "npx tsx app/masks/build.ts",
     "mask:watch": "npx watch \"yarn mask\" app/masks",
@@ -95,3 +96,4 @@
   },
   "packageManager": "yarn@1.22.19"
 }
+

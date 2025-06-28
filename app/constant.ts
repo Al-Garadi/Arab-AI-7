@@ -1,7 +1,7 @@
-export const OWNER = "ChatGPTNextWeb";
-export const REPO = "ChatGPT-Next-Web";
+export const OWNER = "Al-Garadi";
+export const REPO = "Arab-AI";
 export const REPO_URL = `https://github.com/${OWNER}/${REPO}`;
-export const PLUGINS_REPO_URL = `https://github.com/${OWNER}/NextChat-Awesome-Plugins`;
+export const PLUGINS_REPO_URL = `https://github.com/${OWNER}/Arab-AI-Awesome-Plugins`;
 export const ISSUE_URL = `https://github.com/${OWNER}/${REPO}/issues`;
 export const UPDATE_URL = `${REPO_URL}#keep-updated`;
 export const RELEASE_URL = `${REPO_URL}/releases`;
@@ -85,13 +85,13 @@ export enum FileName {
 }
 
 export enum StoreKey {
-  Chat = "chat-next-web-store",
-  Plugin = "chat-next-web-plugin",
+  Chat = "arab-ai-store",
+  Plugin = "arab-ai-plugin",
   Access = "access-control",
   Config = "app-config",
   Mask = "mask-store",
   Prompt = "prompt-store",
-  Update = "chat-update",
+  Update = "arab-ai-update",
   Sync = "sync",
   SdList = "sd-list",
   Mcp = "mcp-store",
@@ -102,12 +102,12 @@ export const MAX_SIDEBAR_WIDTH = 500;
 export const MIN_SIDEBAR_WIDTH = 230;
 export const NARROW_SIDEBAR_WIDTH = 100;
 
-export const ACCESS_CODE_PREFIX = "nk-";
+export const ACCESS_CODE_PREFIX = "aa-";
 
 export const LAST_INPUT_KEY = "last-input";
 export const UNFINISHED_INPUT = (id: string) => "unfinished-input-" + id;
 
-export const STORAGE_KEY = "chatgpt-next-web";
+export const STORAGE_KEY = "arab-ai";
 
 export const REQUEST_TIMEOUT_MS = 60000;
 export const REQUEST_TIMEOUT_MS_FOR_THINKING = REQUEST_TIMEOUT_MS * 5;
@@ -276,7 +276,7 @@ export const DEFAULT_INPUT_TEMPLATE = `{{input}}`; // input / time / model / lan
 // Latex block: $$e=mc^2$$
 // `;
 export const DEFAULT_SYSTEM_TEMPLATE = `
-You are ChatGPT, a large language model trained by {{ServiceProvider}}.
+You are Arab AI, a large language model trained by {{ServiceProvider}}.
 Knowledge cutoff: {{cutoff}}
 Current model: {{model}}
 Current time: {{time}}
@@ -592,55 +592,59 @@ const alibabaModes = [
   "qwen-max-0403",
   "qwen-max-0107",
   "qwen-max-longcontext",
-  "qwen-omni-turbo",
+  "qwen-long",
+  "qwen2-72b-instruct",
+  "qwen2-57b-a14b-instruct",
+  "qwen2-7b-instruct",
+  "qwen2-1.5b-instruct",
+  "qwen2-0.5b-instruct",
+  "qwen2.5-72b-instruct",
+  "qwen2.5-32b-instruct",
+  "qwen2.5-14b-instruct",
+  "qwen2.5-7b-instruct",
+  "qwen2.5-3b-instruct",
+  "qwen2.5-1.5b-instruct",
+  "qwen2.5-0.5b-instruct",
   "qwen-vl-plus",
   "qwen-vl-max",
+  "qwen2-vl-72b-instruct",
+  "qwen2-vl-7b-instruct",
+  "qwen2-vl-2b-instruct",
+  "qwen2.5-coder-32b-instruct",
+  "qwen2.5-coder-14b-instruct",
+  "qwen2.5-coder-7b-instruct",
+  "qwen2.5-coder-3b-instruct",
+  "qwen2.5-coder-1.5b-instruct",
+  "qwen2.5-coder-0.5b-instruct",
+  "qwen2.5-math-72b-instruct",
+  "qwen2.5-math-7b-instruct",
+  "qwen2.5-math-1.5b-instruct",
+  "qwen-audio-turbo",
+  "qwen-audio-chat",
+  "qwen2-audio-7b-instruct",
+  "qwen2-audio-1.5b-instruct",
+  "qwq-32b-preview",
+  "qwen-omni-turbo",
 ];
 
-const tencentModels = [
-  "hunyuan-pro",
-  "hunyuan-standard",
-  "hunyuan-lite",
-  "hunyuan-role",
-  "hunyuan-functioncall",
-  "hunyuan-code",
-  "hunyuan-vision",
-];
+const tencentModels = ["hunyuan-pro", "hunyuan-standard", "hunyuan-lite"];
 
-const moonshotModes = ["moonshot-v1-8k", "moonshot-v1-32k", "moonshot-v1-128k"];
+const moonshotModels = [
+  "moonshot-v1-8k",
+  "moonshot-v1-32k",
+  "moonshot-v1-128k",
+];
 
 const iflytekModels = [
-  "general",
-  "generalv3",
-  "pro-128k",
-  "generalv3.5",
-  "4.0Ultra",
+  "spark-lite",
+  "spark-pro-128k",
+  "spark-pro",
+  "spark-max-32k",
+  "spark-max",
+  "spark-4.0-ultra",
 ];
 
-const deepseekModels = ["deepseek-chat", "deepseek-coder", "deepseek-reasoner"];
-
-const xAIModes = [
-  "grok-beta",
-  "grok-2",
-  "grok-2-1212",
-  "grok-2-latest",
-  "grok-vision-beta",
-  "grok-2-vision-1212",
-  "grok-2-vision",
-  "grok-2-vision-latest",
-  "grok-3-mini-fast-beta",
-  "grok-3-mini-fast",
-  "grok-3-mini-fast-latest",
-  "grok-3-mini-beta",
-  "grok-3-mini",
-  "grok-3-mini-latest",
-  "grok-3-fast-beta",
-  "grok-3-fast",
-  "grok-3-fast-latest",
-  "grok-3-beta",
-  "grok-3",
-  "grok-3-latest",
-];
+const xaiModels = ["grok-beta", "grok-vision-beta"];
 
 const chatglmModels = [
   "glm-4-plus",
@@ -651,62 +655,129 @@ const chatglmModels = [
   "glm-4-long",
   "glm-4-flashx",
   "glm-4-flash",
+  "glm-3-turbo",
   "glm-4v-plus",
   "glm-4v",
-  "glm-4v-flash", // free
   "cogview-3-plus",
   "cogview-3",
-  "cogview-3-flash", // free
-  // 目前无法适配轮询任务
-  //   "cogvideox",
-  //   "cogvideox-flash", // free
+  "cogvideox",
 ];
+
+const deepseekModels = ["deepseek-chat", "deepseek-coder", "deepseek-reasoner"];
 
 const siliconflowModels = [
-  "Qwen/Qwen2.5-7B-Instruct",
-  "Qwen/Qwen2.5-72B-Instruct",
-  "deepseek-ai/DeepSeek-R1",
-  "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
-  "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
-  "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-  "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
-  "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
-  "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
-  "deepseek-ai/DeepSeek-V3",
-  "meta-llama/Llama-3.3-70B-Instruct",
+  "deepseek-ai/DeepSeek-V2.5",
+  "deepseek-ai/DeepSeek-Coder-V2-Instruct",
+  "deepseek-ai/deepseek-llm-67b-chat",
+  "deepseek-ai/deepseek-coder-33b-instruct",
+  "deepseek-ai/deepseek-coder-6.7b-instruct",
+  "deepseek-ai/deepseek-coder-1.3b-instruct",
+  "meta-llama/Meta-Llama-3.1-405B-Instruct",
+  "meta-llama/Meta-Llama-3.1-70B-Instruct",
+  "meta-llama/Meta-Llama-3.1-8B-Instruct",
+  "meta-llama/Meta-Llama-3-70B-Instruct",
+  "meta-llama/Meta-Llama-3-8B-Instruct",
+  "meta-llama/Llama-2-70b-chat-hf",
+  "meta-llama/Llama-2-13b-chat-hf",
+  "meta-llama/Llama-2-7b-chat-hf",
+  "mistralai/Mistral-7B-Instruct-v0.1",
+  "mistralai/Mistral-7B-Instruct-v0.2",
+  "mistralai/Mistral-7B-Instruct-v0.3",
+  "mistralai/Mixtral-8x7B-Instruct-v0.1",
+  "mistralai/Mixtral-8x22B-Instruct-v0.1",
+  "01-ai/Yi-1.5-34B-Chat-16K",
+  "01-ai/Yi-1.5-9B-Chat-16K",
+  "01-ai/Yi-1.5-6B-Chat",
   "THUDM/glm-4-9b-chat",
-  "Pro/deepseek-ai/DeepSeek-R1",
-  "Pro/deepseek-ai/DeepSeek-V3",
+  "THUDM/chatglm3-6b",
+  "Qwen/Qwen2.5-72B-Instruct",
+  "Qwen/Qwen2.5-32B-Instruct",
+  "Qwen/Qwen2.5-14B-Instruct",
+  "Qwen/Qwen2.5-7B-Instruct",
+  "Qwen/Qwen2.5-3B-Instruct",
+  "Qwen/Qwen2.5-1.5B-Instruct",
+  "Qwen/Qwen2.5-0.5B-Instruct",
+  "Qwen/Qwen2-72B-Instruct",
+  "Qwen/Qwen2-57B-A14B-Instruct",
+  "Qwen/Qwen2-7B-Instruct",
+  "Qwen/Qwen2-1.5B-Instruct",
+  "Qwen/Qwen2-0.5B-Instruct",
+  "Qwen/Qwen1.5-110B-Chat",
+  "Qwen/Qwen1.5-72B-Chat",
+  "Qwen/Qwen1.5-32B-Chat",
+  "Qwen/Qwen1.5-14B-Chat",
+  "Qwen/Qwen1.5-7B-Chat",
+  "Qwen/Qwen1.5-4B-Chat",
+  "Qwen/Qwen1.5-1.8B-Chat",
+  "Qwen/Qwen1.5-0.5B-Chat",
+  "internlm/internlm2_5-20b-chat",
+  "internlm/internlm2_5-7b-chat",
+  "internlm/internlm2-chat-20b",
+  "internlm/internlm2-chat-7b",
+  "internlm/internlm2-chat-1_8b",
+  "google/gemma-2-27b-it",
+  "google/gemma-2-9b-it",
+  "google/gemma-2-2b-it",
+  "microsoft/Phi-3-medium-4k-instruct",
+  "microsoft/Phi-3-mini-4k-instruct",
+  "microsoft/Phi-3.5-mini-instruct",
+  "Qwen/Qwen2-VL-72B-Instruct",
+  "Qwen/Qwen2-VL-7B-Instruct",
+  "Qwen/Qwen2-VL-2B-Instruct",
+  "OpenGVLab/InternVL2-26B",
+  "OpenGVLab/InternVL2-8B",
+  "OpenGVLab/InternVL2-4B",
+  "OpenGVLab/InternVL2-2B",
+  "OpenGVLab/InternVL2-1B",
+  "stepfun-ai/GOT-OCR2_0",
+  "Pro/Qwen/Qwen2.5-Coder-32B-Instruct",
+  "Pro/Qwen/Qwen2.5-Math-72B-Instruct",
+  "Pro/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+  "Pro/deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+  "Pro/deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+  "Pro/deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+  "Pro/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+  "Pro/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+  "Pro/Qwen/QwQ-32B-Preview",
+  "Pro/meta-llama/Llama-3.2-90B-Vision-Instruct",
+  "Pro/meta-llama/Llama-3.2-11B-Vision-Instruct",
+  "Pro/meta-llama/Llama-3.2-3B-Instruct",
+  "Pro/meta-llama/Llama-3.2-1B-Instruct",
+  "Pro/nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
+  "Pro/Qwen/Qwen2.5-Coder-7B-Instruct",
+  "Pro/Qwen/Qwen2.5-Coder-3B-Instruct",
+  "Pro/Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "Pro/Qwen/Qwen2.5-Math-7B-Instruct",
+  "Pro/Qwen/Qwen2.5-Math-1.5B-Instruct",
 ];
 
-let seq = 1000; // 内置的模型序号生成器从1000开始
 export const DEFAULT_MODELS = [
   ...openaiModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++, // Global sequence sort(index)
+    sorted: 1,
     provider: {
       id: "openai",
       providerName: "OpenAI",
       providerType: "openai",
-      sorted: 1, // 这里是固定的，确保顺序与之前内置的版本一致
+      sorted: 1,
     },
   })),
-  ...openaiModels.map((name) => ({
+  ...anthropicModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: 2,
     provider: {
-      id: "azure",
-      providerName: "Azure",
-      providerType: "azure",
+      id: "anthropic",
+      providerName: "Anthropic",
+      providerType: "anthropic",
       sorted: 2,
     },
   })),
   ...googleModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: 3,
     provider: {
       id: "google",
       providerName: "Google",
@@ -714,146 +785,134 @@ export const DEFAULT_MODELS = [
       sorted: 3,
     },
   })),
-  ...anthropicModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "anthropic",
-      providerName: "Anthropic",
-      providerType: "anthropic",
-      sorted: 4,
-    },
-  })),
   ...baiduModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: 4,
     provider: {
       id: "baidu",
       providerName: "Baidu",
       providerType: "baidu",
-      sorted: 5,
+      sorted: 4,
     },
   })),
   ...bytedanceModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: 5,
     provider: {
       id: "bytedance",
       providerName: "ByteDance",
       providerType: "bytedance",
-      sorted: 6,
+      sorted: 5,
     },
   })),
   ...alibabaModes.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: 6,
     provider: {
       id: "alibaba",
       providerName: "Alibaba",
       providerType: "alibaba",
-      sorted: 7,
+      sorted: 6,
     },
   })),
   ...tencentModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: 7,
     provider: {
       id: "tencent",
       providerName: "Tencent",
       providerType: "tencent",
-      sorted: 8,
+      sorted: 7,
     },
   })),
-  ...moonshotModes.map((name) => ({
+  ...moonshotModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: 8,
     provider: {
       id: "moonshot",
       providerName: "Moonshot",
       providerType: "moonshot",
-      sorted: 9,
+      sorted: 8,
     },
   })),
   ...iflytekModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: 9,
     provider: {
       id: "iflytek",
-      providerName: "Iflytek",
+      providerName: "iFlytek",
       providerType: "iflytek",
-      sorted: 10,
+      sorted: 9,
     },
   })),
-  ...xAIModes.map((name) => ({
+  ...xaiModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: 10,
     provider: {
       id: "xai",
-      providerName: "XAI",
+      providerName: "xAI",
       providerType: "xai",
-      sorted: 11,
+      sorted: 10,
     },
   })),
   ...chatglmModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: 11,
     provider: {
       id: "chatglm",
       providerName: "ChatGLM",
       providerType: "chatglm",
-      sorted: 12,
+      sorted: 11,
     },
   })),
   ...deepseekModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: 12,
     provider: {
       id: "deepseek",
       providerName: "DeepSeek",
       providerType: "deepseek",
-      sorted: 13,
+      sorted: 12,
     },
   })),
   ...siliconflowModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: 13,
     provider: {
       id: "siliconflow",
       providerName: "SiliconFlow",
       providerType: "siliconflow",
-      sorted: 14,
+      sorted: 13,
     },
   })),
-] as const;
+];
 
-export const CHAT_PAGE_SIZE = 15;
-export const MAX_RENDER_MSG_COUNT = 45;
-
-// some famous webdav endpoints
+// Additional constants for Arab AI
+export const SAAS_CHAT_URL = "https://arab-ai.vercel.app";
+export const SAAS_CHAT_UTM_URL = "https://arab-ai.vercel.app";
+export const DEFAULT_GA_ID = "";
 export const internalAllowedWebDavEndpoints = [
   "https://dav.jianguoyun.com/dav/",
   "https://dav.dropdav.com/",
-  "https://dav.box.com/dav",
-  "https://nanao.teracloud.jp/dav/",
-  "https://bora.teracloud.jp/dav/",
+  "https://app.koofr.net/dav/Koofr",
   "https://webdav.4shared.com/",
-  "https://dav.idrivesync.com",
-  "https://webdav.yandex.com",
+  "https://webdav.teracloud.jp/dav/",
+  "https://bora.teracloud.jp/dav/",
+  "https://webdav.dubox.com/",
+  "https://dav.box.com/dav",
+  "https://nanao.teracloud.jp:8080/dav/",
+  "https://webdav.yandex.ru",
   "https://app.koofr.net/dav/Koofr",
 ];
 
-export const DEFAULT_GA_ID = "G-89WN60ZK2E";
-
-export const SAAS_CHAT_URL = "https://nextchat.club";
-export const SAAS_CHAT_UTM_URL = "https://nextchat.club?utm=github";
+export const CHAT_PAGE_SIZE = 15;

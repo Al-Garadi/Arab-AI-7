@@ -7,9 +7,7 @@ import { useAccessStore } from "../store";
 import Locale from "../locales";
 import Delete from "../icons/close.svg";
 import Arrow from "../icons/arrow.svg";
-import Logo from "../icons/logo.svg";
 import { useMobileScreen } from "@/app/utils";
-import BotIcon from "../icons/bot.svg";
 import { getClientConfig } from "../config/client";
 import { PasswordInput } from "./ui-lib";
 import LeftIcon from "@/app/icons/left.svg";
@@ -57,7 +55,11 @@ export function AuthPage() {
         ></IconButton>
       </div>
       <div className={clsx("no-dark", styles["auth-logo"])}>
-        <BotIcon />
+        <img
+          src="/arab-ai-logo.png"
+          alt="Arab AI Logo"
+          style={{ width: "64px", height: "64px" }}
+        />
       </div>
 
       <div className={styles["auth-title"]}>{Locale.Auth.Title}</div>
@@ -166,7 +168,12 @@ function TopBanner() {
       onMouseLeave={handleMouseLeave}
     >
       <div className={clsx(styles["top-banner-inner"], "no-dark")}>
-        <Logo className={styles["top-banner-logo"]}></Logo>
+        <img
+          src="/arab-ai-logo.png"
+          alt="Arab AI"
+          className={styles["top-banner-logo"]}
+          style={{ width: "32px", height: "32px" }}
+        />
         <span>
           {Locale.Auth.TopTips}
           <a

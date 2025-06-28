@@ -9,10 +9,10 @@ import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 import { getServerSideConfig } from "./config/server";
 
 export const metadata: Metadata = {
-  title: "NextChat",
-  description: "Your personal ChatGPT Chat Bot.",
+  title: "Arab AI",
+  description: "Your personal AI Assistant with Arabic cultural design.",
   appleWebApp: {
-    title: "NextChat",
+    title: "Arab AI",
     statusBarStyle: "default",
   },
 };
